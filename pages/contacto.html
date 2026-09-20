@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>BookNook | Contacto</title>
+
+        <link rel="stylesheet" href="../css/estilos.css">
+    </head>
+
+    <body>
+        <header>
+            <nav class="navbar">
+                <div class="logo">
+                    <a href="../index.html">
+                        BookNook
+                    </a>
+                </div>
+                <ul class="menu">
+                    <li>
+                        <a href="../index.html">
+                            Inicio
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="productos.html">
+                            Productos
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="nosotros.html">
+                            Nosotros
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="blog.html">
+                            Blog
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="contacto.html">
+                            Contacto
+                        </a>
+                    </li>
+                </ul>
+
+                <div class="acciones">
+                    <a href="registro.html">
+                        Registrarse
+                    </a>
+
+                    <button id="btnCarrito">
+                        Carrito(<span id="cantidadCarrito">0</span>)    
+                    </button>
+
+                </div>
+            </nav>
+        </header>
+
+        <main>
+            <section class="seccion">
+                <div class="titulo-seccion">
+                    <p class="subtitulo">
+                        HABLEMOS
+                    </p>
+
+                    <h1>
+                        Contacta con BookNook
+                    </h1>
+
+                    <p>
+                        ¿Tienes una pregunta, una recomendación o simplemente quieres hablarnos de tu próximo libro?
+                    </p>
+                </div>
+
+                <div class="detalle-producto">
+                    <div class="detalle-info">
+                        <h2>
+                            Estamos para ayudarte
+                        </h2>
+
+                        <p>
+                            Puedes enviarnos un mensaje mediante este formulario.
+                        </p>
+
+                        <br>
+
+                        <h3>
+                            Nuestra librería
+                        </h3>
+
+                        <p>
+                            Av. Washuleru 1234
+                            <br>
+                            Santiago, Chile
+                        </p>
+
+                        <br>
+
+                        <h3>
+                            Correo
+                        </h3>
+
+                        <p>
+                            contacto@booknook.cl
+                        </p>
+
+                        <br>
+
+                        <h3>
+                            Horario
+                        </h3>
+
+                        <p>
+                            Lunes a Sábado
+                            <br>
+                            10:00 a 19:00 hrs.
+                        </p>
+                    </div>
+
+                    <div>
+                        <form 
+                            id="formContacto"
+                            class="formulario"
+                            novalidate>
+
+                            <div class="campo">
+                                <label for="contactoNombre">
+                                    Nombre
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="contactoNombre"
+                                    name="contactoNombre"
+                                    maxlength="100"
+                                    placeholder="Ingresa tu nombre"
+                                    required>
+                                
+                                <small
+                                    id="errorContactoNombre"
+                                    class="mensaje-error">
+                                </small>
+                            </div>
+
+                            <div class="campo">
+                                <label for="contactoCorreo">
+                                    Correo electrónico
+                                </label>
+
+                                <input
+                                    type="email"
+                                    id="contactoCorreo"
+                                    name="contactoCorreo"
+                                    maxlength="100"
+                                    placeholder="ejemplo@correo.com"
+                                    required>
+
+                                <small
+                                    id="errorContactoCorreo"
+                                    class="mensaje-error">
+                                </small>
+                            </div>
+
+                            <div class="campo">
+                                <label for="asunto">
+                                    Asunto
+                                </label>
+
+                                <select
+                                    id="asunto"
+                                    name="asunto"
+                                    required>
+
+                                    <option value="">
+                                        Selecciona una opción
+                                    </option>
+
+                                    <option value="consulta">
+                                        Consulta general
+                                    </option>
+
+                                    <option value="producto">
+                                        Consulta sobre un producto
+                                    </option>
+
+                                    <option value="pedido">
+                                        Consulta sobre un pedido
+                                    </option>
+
+                                    <option value="recomendacion">
+                                        Recomendación
+                                    </option>
+
+                                    <option value="otro">
+                                        Otro
+                                    </option>
+
+                                </select>
+
+                                <small 
+                                    id="errorAsunto"
+                                    class="mensaje-error">
+                                </small>
+                            </div>
+
+                            <div class="campo">
+                                <label for="comentario">
+                                    Comentario
+                                </label>
+
+                                <textarea
+                                    id="comentario"
+                                    name="comentario"
+                                    rows="6"
+                                    maxlength="500"
+                                    placeholder="Escribe tu mensaje..."
+                                    required>
+                                </textarea>
+
+                                <small
+                                    id="errorComentario"
+                                    class="mensaje-error">
+                                </small>
+
+                                <small>
+                                    Máximo 500 caracteres.
+                                </small>
+
+                                <button
+                                    type="submit"
+                                    class="btn-principal">
+                                    Enviar mensaje
+                                </button>
+
+                                <p
+                                    id="mensajeContacto"
+                                    class="mensaje-formulario">
+                                </p>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <div class="footer-contenido">
+                <div>
+                    <h3>
+                        BookNook
+                    </h3>
+
+                    <p>
+                        Una librería para quienes siempre necesitan un buen libro a la mano. Explora nuestra selección de mangas, cómics y novelas, y encuentra tu próxima lectura.
+                    </p>
+                </div>
+
+                <div>
+                    <h4>
+                        Navegación
+                    </h4>
+
+                    <a href="../index.html">
+                        Inicio
+                    </a>
+
+                    <a href="productos.html">
+                        Productos
+                    </a>
+
+                    <a href="blog.html">
+                        Blog
+                    </a>
+
+                    <a href="contacto.html">
+                        Contacto
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>
+                    &copy; 2024 BookNook. Todos los derechos reservados.
+                </p>
+            </div>
+        </footer>
+
+        <script src="../js/script.js"></script>
+    </body>
+</html>
