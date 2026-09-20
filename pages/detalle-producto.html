@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>BookNook | Detalle del Producto</title>
+
+        <link rel="stylesheet" href="../css/estilos.css">
+    </head>
+
+    <body>
+        <header>
+            <nav class="navbar">
+                <div class="logo">
+                    <a href="../index.html">
+                        BookNook
+                    </a>
+                </div>
+                <ul class="menu">
+                    <li>
+                        <a href="../index.html">
+                            Inicio
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="productos.html">
+                            Productos
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="nosotros.html">
+                            Nosotros
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="blog.html">
+                            Blog
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="contacto.html">
+                            Contacto
+                        </a>
+                    </li>
+                </ul>
+
+                <div class="acciones">
+                    <a href="login.html">
+                        Iniciar Sesión
+                    </a>
+
+                    <button id="btnCarrito">
+                        Carrito(<span id="cantidadCarrito">0</span>)    
+                    </button>
+
+                </div>
+            </nav>
+        </header>
+
+        <main>
+            <section class="seccion">
+                <p class="subtitulo">
+                    DETALLE DEL PRODUCTO
+                </p>
+                
+                <div class="detalle-producto">
+                    <div class = "detalle-imagen">
+                        <img src="../img/libro1.jpg" alt="libro 1">
+                    </div>
+                    <div clas="detalle-info">
+                        <p class="categoria">
+                            Fantástica & Sci-Fi
+                        </p>
+
+                        <h1>
+                            El nombre del viento
+                        </h1>
+
+                        <p class="precio">
+                            $18.990
+                        </p>
+
+                        <p>
+                            Una novela de fantasía que narra la historia de Kvothe y su camino por un mundo lleno de magia, música y misterios.
+                        </p>
+
+                        <p>
+                            Descubre una historia ideal para quienes disfrutan de mundos fantásticos y personajes memorables.
+                        </p>
+
+                        <label for = "cantidad">
+                            Cantidad:
+                        </label>
+
+                        <select id="cantidad">
+                            <option value="1">
+                                1
+                            </option>
+                            <option value="2">
+                                2
+                            </option>
+                            <option value="3">
+                                3
+                            </option>
+                            <option value="4">
+                                4
+                            </option>
+                            <option value="5">
+                                5
+                            </option>
+                        </select>
+
+                        <br>
+                        <br>
+
+                        <button class="btn-carrito">
+                            Agregar al Carrito
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="seccion">
+                <div class="titulo-seccion">
+                    <p class="subtitulo">
+                        TAMBIÉN TE PUEDE INTERESAR
+                    </p>
+
+                    <h2>
+                        Productos relacionados
+                    </h2>
+                </div>
+
+                <div class="productos-grid">
+                    <article class="producto-card">
+                        <img src="../img/libro2.jpg" alt="libro 2">
+
+                        <div class="producto-info">
+                            <h3>
+                                Death Note
+                            </h3>
+
+                            <p class="precio">
+                                $12.990
+                            </p>
+
+                            <button class="btn-carrito">
+                                Agregar al Carrito
+                            </button>
+                        </div>
+                    </article>
+
+                    <article class="producto-card">
+                        <img src="../img/libro3.jpg" alt="libro 3">
+
+                        <div class="producto-info">
+                            <h3>
+                                Coraline
+                            </h3>
+
+                            <p class="precio">
+                                $10.990
+                            </p>
+
+                            <button class="btn-carrito">
+                                Agregar al Carrito
+                            </button>
+                        </div>
+                    </article>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <div class="footer-contenido">
+                <div>
+                    <h3>
+                        BookNook
+                    </h3>
+
+                    <p>
+                        Una librería para quienes siempre necesitan un buen libro a la mano. Explora nuestra selección de mangas, cómics y novelas, y encuentra tu próxima lectura.
+                    </p>
+                </div>
+
+                <div>
+                    <h4>
+                        Navegación
+                    </h4>
+
+                    <a href="../index.html">
+                        Inicio
+                    </a>
+
+                    <a href="productos.html">
+                        Productos
+                    </a>
+
+                    <a href="blog.html">
+                        Blog
+                    </a>
+
+                    <a href="contacto.html">
+                        Contacto
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>
+                    &copy; 2024 BookNook. Todos los derechos reservados.
+                </p>
+            </div>
+        </footer>
+
+        <script src="../js/script.js"></script>
+    </body>
+</html>
