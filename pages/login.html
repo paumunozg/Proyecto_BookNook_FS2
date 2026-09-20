@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>BookNook | Iniciar Sesión</title>
+
+        <link rel="stylesheet" href="../css/estilos.css">
+    </head>
+    
+    <body>
+        <header>
+            <nav class="navbar">
+                <div class="logo">
+                    <a href="../index.html">
+                        BookNook
+                    </a>
+                </div>
+                <ul class="menu">
+                    <li>
+                        <a href="../index.html">
+                            Inicio
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="productos.html">
+                            Productos
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="nosotros.html">
+                            Nosotros
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="blog.html">
+                            Blog
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="contacto.html">
+                            Contacto
+                        </a>
+                    </li>
+                </ul>
+
+                <div class="acciones">
+                    <a href="registro.html">
+                        Registrarse
+                    </a>
+
+                    <button id="btnCarrito">
+                        Carrito(<span id="cantidadCarrito">0</span>)    
+                    </button>
+
+                </div>
+            </nav>
+        </header>
+
+        <main>
+            <section class="seccion">
+                <div class="titulo-seccion">
+                    <p class="subtitulo">
+                        BIENVENIDO A BOOKNOOK
+                    </p>
+
+                    <h1>
+                        Iniciar Sesión
+                    </h1>
+
+                    <p>
+                        Ingresa a tu cuenta de BookNook
+                    </p>
+                </div>
+
+                <form id="formLogin" class="formulario" novalidate>
+                    <div class="campo">
+                        <label for="loginCorreo">
+                            Correo Electrónico
+                        </label>
+                        <input
+                            type="email"
+                            id="loginCorreo"
+                            name="loginCorreo"
+                            autocomplete="email"
+                            placeholder="ejemplo@correo.com"
+                            required>
+
+                        <small
+                            id="errorLoginCorreo"
+                            class="mensaje-error">
+                        </small>
+                    </div>
+
+                    <div class="campo">
+                        <label for="loginPassword">
+                            Contraseña
+                        </label>
+                        <input
+                            type="password"
+                            id="loginPassword"
+                            name="loginPassword"
+                            autocomplete="current-password"
+                            placeholder="Ingresa tu contraseña"
+                            required>
+
+                        <small
+                            id="errorLoginPassword"
+                            class="mensaje-error">
+                        </small>
+                    </div>
+
+                    <button
+                        type="submit"
+                        class="btn-principal">
+                        Iniciar sesión
+                    </button>
+
+                    <p class="texto-formulario">
+                        ¿No tienes una cuenta? 
+                        <a href="registro.html">
+                            Regístrate aquí
+                        </a>
+                    </p>
+                </form>
+            </section>
+        </main>
+
+        <footer>
+            <div class="footer-contenido">
+                <div>
+                    <h3>
+                        BookNook
+                    </h3>
+
+                    <p>
+                        Una librería para quienes siempre necesitan un buen libro a la mano. Explora nuestra selección de mangas, cómics y novelas, y encuentra tu próxima lectura.
+                    </p>
+                </div>
+
+                <div>
+                    <h4>
+                        Navegación
+                    </h4>
+
+                    <a href="../index.html">
+                        Inicio
+                    </a>
+
+                    <a href="productos.html">
+                        Productos
+                    </a>
+
+                    <a href="blog.html">
+                        Blog
+                    </a>
+
+                    <a href="contacto.html">
+                        Contacto
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>
+                    &copy; 2024 BookNook. Todos los derechos reservados.
+                </p>
+            </div>
+        </footer>
+
+        <script src="../js/script.js"></script>
+    </body>
+</html>
