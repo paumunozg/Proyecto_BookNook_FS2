@@ -3,29 +3,30 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+         <link rel="stylesheet" href="C:\Users\Dani\Documents\GitHub\Proyecto_BookNook_FS2\css\estilos.css"> 
         <title>BookNook | Librería</title>
     </head>
-    <body>
+    <body class="bg-primary">
         <header>
             <nav class="navbar">
-                <div class="logo">
+                <div class="logo mt">
                     <a href="index.html">
                         BookNook 
                     </a>
+                </div>  
+                <div class="container">
+                    <ul class="Menu d-flex gap-4 ms-auto me-4">
+                    <a  href="index.html" >Inicio</a>
+                    <a href="pages/productos.html">Productos</a>
+                    <a href="pages/nosotros.hmtl">Nosotros</a>
+                    <a href="pages/blig.hmtl">Blog</a>
+                    <a href="pages/contacto.html">Contacto</a>
+                    </ul>
                 </div>
-                
-                <ul class="Menu">
-                    <li><a href="index.html">Inicio</a></li>
-                    <li><a href="pages/productos.html">Productos</a></li>
-                    <li><a href="pages/nosotros.html">Nosotros</a></li>
-                    <li><a href="pages/blog.html">Blog</a></li>
-                    <li><a href="pages/contacto.html">Contacto</a></li>
-                </ul>
-                
-                <div class="acciones">
-                    <a href="pages/login.html">Iniciar sesión</a>
-                    <button id="btnCarrito">
+                <div class="d-flex flex-column align-items-end ms-auto">
+                    <a href="pages/login.hmtl">Iniciar sesion</a>
+                    <button id="btnCarrito" class="btn btn-secondary mt-2">
                         Carrito(<span id="cantidadCarrito">0</span>)
                     </button>
 
@@ -36,7 +37,7 @@
 
         <main>
             <section class="hero">
-                <div class="hero-contenido">
+                <div class="hero-contenido container mr-0">
                     <p class="subtitulo">
                         BIENVENIDO A BOOKNOOK
                     </p>
@@ -49,25 +50,25 @@
                         Descubre mangas, cómics, novelas y mundos fantásticos en un solo lugar. Explora nuestra amplia selección de libros y encuentra tu próxima aventura literaria.
                     </p>
 
-                    <a href="pages/productos.html" class="btn-principal">
+                    <a href="pages/productos.html" class="btn btn-secondary" role="button">
                         Ver productos
                     </a>
                 </div>
 
-                <div class="hero-imagen">
-                    <img src="img/hero.jpg" alt="Imagen de libros y cómics">
+                <div class="img-fluid ">
+                    <img src="C:\Users\Dani\Documents\GitHub\Proyecto_BookNook_FS2\img\6757d497-216c-4579-ab01-5bb3fcb62f31.png" alt="Imagen de libros y cómics" height="250" class="rounded mx-auto d-block">
                 </div>
             </section>
 
 
             <section class="seccion">
                 <div class="titulo-seccion">
-                    <p class="subtitulo">Lo Ultimo!</p>
-                    <h2>Novedades del mes</h2>
+                    <h1><p class="subtitulo">Lo Ultimo!</p></h1>
+                    <h3>Novedades del mes</h3>
                 </div>
-                <div class="productos-grid">
+                <div class="productos-Grid">
                     <article class="producto-card">
-                        <img src="img/libro1.jpg" alt="libro 1">
+                        <img src="url de la imagen" alt="portada del libro">
                         <div class="producto-info">
                             <h3>El nombre del viento</h3>    
                             <p class="categoria">Fantástica & Sci-Fi</p>
@@ -77,6 +78,10 @@
                             </button>
                         </div>
                     </article>
+                    </div>
+                    
+                    
+                    
 
                 </div>
 
@@ -144,7 +149,8 @@
                     </article>
                 </div>
             </section>
+            
         </main>
-        <script src="js/script.js"></script>    
+        
     </body>
 </html>
