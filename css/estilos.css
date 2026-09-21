@@ -11,7 +11,6 @@ header{
     padding: 10px 20px;
     border-radius: 5px;
     text-decoration: none;
-    
 }
 .acciones a,.acciones button{
     display: inline-block;
@@ -22,6 +21,10 @@ header{
     border-radius: 5px;
     text-decoration: none; 
     gap: 1rem;
+}
+.acciones button:hover{
+    background-color:black;
+    color: white;
 }
 body{
     background-color: lightgrey;
@@ -64,4 +67,67 @@ body{
 .btn-carrito:hover{
     background-color:black;
     color: white;
+}
+.recomendados{
+    text-align: center;
+    color: rgb(92, 91, 91);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: larger;
+}
+.subtitulo-recomendado{
+    font-size:xx-large;
+}
+
+.btn-secundario{
+    background-color: rgb(92, 91, 91);
+    color: rgb(10, 10, 10);
+    border:none;
+    display: inline-block;
+    border-radius: 5px;
+    padding: 10px 20px;
+    text-decoration: none;
+}
+.btn-secundario:hover{
+    background-color:black;
+    color: white;
+}
+.seccion{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.blog-grid .blog-card h3{
+    font-size: 40px;
+}
+.blog-grid .blog-card p{
+    font-size: 20px;
+}
+
+.blog-grid .blog-card a{
+    display: inline-block;
+    color:rgb(10, 10, 10);
+    background-color: rgb(92, 91, 91);
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+.blog-grid .blog-card a:hover{
+    background-color:black;
+    color: white;
+}
+.footer-contenido{
+    background-color: grey;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size:large;
+    font-style: italic;
+}
+.footer-contenido .navegacion a{
+
+    display: inline-block;
+    align-items: center;
+    color: rgb(10, 10, 10);
+    background-color: rgb(92, 91, 91);
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none; 
+    gap: 1rem;
 }
