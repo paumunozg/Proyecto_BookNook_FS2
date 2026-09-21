@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Detalle producto - BookNook</title>
+    <title>Editar producto - BookNook</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="C:\Users\Dani\Documents\GitHub\Proyecto_BookNook_FS2\css\estilos.css">
@@ -61,62 +61,166 @@
 
                 <p class="subtitulo">ADMINISTRACIÓN</p>
 
-                <h1>Detalle del producto</h1>
+                <h1>Editar producto</h1>
+
+                <p>
+                    Modifica la información del producto seleccionado.
+                </p>
 
             </div>
 
 
-            <section class="admin-detalle">
+            <section class="formulario-admin">
 
-                <div class="admin-detalle-imagen">
+                <form id="formEditarProducto" novalidate>
 
-                    <div class="imagen-placeholder">
-                        imagen de detalle
+                    <div class="formulario-grid">
+
+                        <div class="campo">
+
+                            <label for="editarCodigo">
+                                Código del producto *
+                            </label>
+
+                            <input
+                                type="text"
+                                id="editarCodigo"
+                                value="BK001"
+                                maxlength="100"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="campo">
+
+                            <label for="editarNombre">
+                                Nombre *
+                            </label>
+
+                            <input
+                                type="text"
+                                id="editarNombre"
+                                value="El Hobbit"
+                                maxlength="100"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="campo">
+
+                            <label for="editarPrecio">
+                                Precio *
+                            </label>
+
+                            <input
+                                type="number"
+                                id="editarPrecio"
+                                value="12990"
+                                min="0"
+                                step="0.01"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="campo">
+
+                            <label for="editarStock">
+                                Stock *
+                            </label>
+
+                            <input
+                                type="number"
+                                id="editarStock"
+                                value="15"
+                                min="0"
+                                step="1"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="campo">
+
+                            <label for="editarStockCritico">
+                                Stock crítico
+                            </label>
+
+                            <input
+                                type="number"
+                                id="editarStockCritico"
+                                value="5"
+                                min="0"
+                                step="1"
+                            >
+
+                        </div>
+
+
+                        <div class="campo">
+
+                            <label for="editarCategoria">
+                                Categoría *
+                            </label>
+
+                            <select id="editarCategoria" required>
+
+                                <option value="mangas">
+                                    Mangas & Cómics
+                                </option>
+
+                                <option
+                                    value="fantasia"
+                                    selected>
+                                    Fantástica & Sci-Fi
+                                </option>
+
+                                <option value="novelas">
+                                    Novelas
+                                </option>
+
+                                <option value="merch">
+                                    Marcadores & Merch
+                                </option>
+
+                            </select>
+
+                        </div>
+
                     </div>
 
-                </div>
+
+                    <div class="campo">
+
+                        <label for="editarDescripcion">
+                            Descripción
+                        </label>
+
+                        <textarea
+                            id="editarDescripcion"
+                            maxlength="500"
+                            rows="5">Una aventura clásica de fantasía para los amantes de la literatura fantástica.</textarea>
+
+                    </div>
 
 
-                <div class="admin-detalle-info">
+                    <div class="campo">
 
-                    <span class="categoria">
-                        Fantástica & Sci-Fi
-                    </span>
+                        <label for="editarImagen">
+                            Cambiar imagen
+                        </label>
 
-                    <h2>El Hobbit</h2>
-
-                    <p class="admin-codigo">
-                        Código: BK001
-                    </p>
-
-                    <p>
-                        Una aventura clásica de fantasía para los
-                        amantes de la literatura fantástica.
-                    </p>
-
-                    <p class="precio">
-                        $12.990
-                    </p>
-
-
-                    <div class="admin-datos-producto">
-
-                        <div>
-                            <strong>Stock</strong>
-                            <span>15 unidades</span>
-                        </div>
-
-                        <div>
-                            <strong>Stock crítico</strong>
-                            <span>5 unidades</span>
-                        </div>
-
-                        <div>
-                            <strong>Estado</strong>
-                            <span class="estado-disponible">
-                                Disponible
-                            </span>
-                        </div>
+                        <input
+                            type="file"
+                            id="editarImagen"
+                            accept="image/*"
+                        >
 
                     </div>
 
@@ -126,18 +230,24 @@
                         <a
                             href="productos.html"
                             class="btn-secundario">
-                            Volver
+                            Cancelar
                         </a>
 
-                        <a
-                            href="editar-producto.html"
+                        <button
+                            type="submit"
                             class="btn-principal">
-                            Editar producto
-                        </a>
+                            Guardar cambios
+                        </button>
 
                     </div>
 
-                </div>
+
+                    <p
+                        id="mensajeEditarProducto"
+                        class="mensaje-formulario">
+                    </p>
+
+                </form>
 
             </section>
 
@@ -148,3 +258,4 @@
 </body>
 
 </html>
+    
