@@ -1,2 +1,393 @@
+header{
+    background-color: grey;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size:large;
+    font-style: italic;
+}
+.container_menu a{
+    display: inline-block;
+    color:rgb(10, 10, 10);
+    background-color: rgb(92, 91, 91);
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+.acciones a,.acciones button{
+    display: inline-block;
+    align-items: center;
+    color: rgb(10, 10, 10);
+    background-color: rgb(92, 91, 91);
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none; 
+    gap: 1rem;
+}
+.acciones button:hover{
+    background-color:black;
+    color: white;
+}
+body{
+    background-color: lightgrey;
+
+}
+
+.hero{
+    font-family:'Times New Roman', Times, serif;
+    font-size: large;
+}
+
+.seccion{
+    text-align: center;
+    color:dimgrey;
+    font-size: large;
+}
+.productos{
+    margin: 10px;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 20px;
+}
+.producto-card{
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    background-color: grey;
+    width: 100;
+}
+.producto-info{
+    color: black;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.btn-carrito{
+    background-color: lightgrey;
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+}
+.btn-carrito:hover{
+    background-color:black;
+    color: white;
+}
+.recomendados{
+    text-align: center;
+    color: rgb(92, 91, 91);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: larger;
+}
+.subtitulo-recomendado{
+    font-size:xx-large;
+}
+
+.btn-secundario{
+    background-color: rgb(92, 91, 91);
+    color: rgb(10, 10, 10);
+    border:none;
+    display: inline-block;
+    border-radius: 5px;
+    padding: 10px 20px;
+    text-decoration: none;
+}
+.btn-secundario:hover{
+    background-color:black;
+    color: white;
+}
+.seccion{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.blog-grid .blog-card h3{
+    font-size: 40px;
+}
+.blog-grid .blog-card p{
+    font-size: 20px;
+}
+
+.blog-grid .blog-card a{
+    display: inline-block;
+    color:rgb(10, 10, 10);
+    background-color: rgb(92, 91, 91);
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+.blog-grid .blog-card a:hover{
+    background-color:black;
+    color: white;
+}
+.footer-contenido{
+    background-color: grey;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size:large;
+    font-style: italic;
+}
+.footer-contenido .navegacion a{
+
+    display: inline-block;
+    align-items: center;
+    color: rgb(10, 10, 10);
+    background-color: rgb(92, 91, 91);
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none; 
+    gap: 1rem;
+}
+
+/*----------------------------------Area administrativa---------------------------- */
+.admin-layout {
+    min-height: 100vh;
+    display: flex;
+    background-color: rgb(80, 80, 80);
+}
+/* MENÚ LATERAL */
+
+.admin-sidebar {
+    width: 250px;
+    min-height: 100vh;
+    background-color: rgba(255,255,255,.15);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+}
+.admin-logo {
+    padding: 2rem 1.5rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    border-bottom: 1px solid rgba(92,91,91);
+}
+.admin-logo span {
+    display: block;
+    font-size: .85rem;
+    font-weight: normal;
+    color: #353433;
+    margin-top: .3rem;
+}
+.admin-menu {
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem 1rem;
+    gap: .5rem;
+}
+.admin-menu a {
+    padding: .9rem 1rem;
+    border-radius: 8px;
+    color: white;
+    transition: .3s;
+}
+.admin-menu a:hover,
+.admin-menu a.activo {
+    background-color: #b1b1b1;
+}
+.admin-salir {
+    margin-top: auto;
+    padding: 1.5rem;
+    border-top: 1px solid rgba(255,255,255,.15);
+}
+.admin-salir a {
+    color: white;
+}
+/* CONTENIDO */
+
+.admin-contenido {
+    margin-left: 250px;
+    width: calc(100% - 250px);
+    padding: 3rem;
+}
+.admin-header {
+    margin-bottom: 3rem;
+}
+
+.admin-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: .7rem;
+}
+
+.admin-header p {
+    max-width: 700px;
+}
+/* TARJETAS */
+
+.admin-tarjetas {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.admin-card {
+    background-color: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 5px 20px rgba(0,0,0,.08);
+}
+
+.admin-card-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.admin-card h2 {
+    margin-bottom: .5rem;
+}
+
+.admin-card p {
+    margin-bottom: 1.5rem;
+    color: #666;
+}
+/* BIENVENIDA */
+
+.admin-bienvenida {
+    background-color: white;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 5px 20px rgba(0,0,0,.08);
+}
+
+.admin-bienvenida h2 {
+    margin-bottom: .8rem;
+}
 
 
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+
+    .admin-sidebar {
+        width: 200px;
+    }
+
+    .admin-contenido {
+        margin-left: 200px;
+        width: calc(100% - 200px);
+        padding: 2rem;
+    }
+
+    .admin-tarjetas {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media (max-width: 650px) {
+
+    .admin-layout {
+        display: block;
+    }
+
+    .admin-sidebar {
+        position: relative;
+        width: 100%;
+        min-height: auto;
+    }
+
+    .admin-menu {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .admin-salir {
+        margin-top: 0;
+    }
+
+    .admin-contenido {
+        margin-left: 0;
+        width: 100%;
+        padding: 1.5rem;
+    }
+
+}
+
+/*area de productos*/
+.admin-header-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+}
+
+
+.admin-tabla-contenedor {
+    background-color: white;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 5px 20px rgba(0,0,0,.08);
+}
+
+
+.admin-tabla-header {
+    margin-bottom: 1.5rem;
+}
+
+.admin-tabla-header h2 {
+    margin-bottom: .3rem;
+}
+
+
+.tabla-responsive {
+    width: 100%;
+    overflow-x: auto;
+}
+
+
+.admin-tabla {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 750px;
+}
+
+
+.admin-tabla th {
+    text-align: left;
+    padding: 1rem;
+    background-color: #F8F4EC;
+    color: #313130;
+}
+
+
+.admin-tabla td {
+    padding: 1rem;
+    border-bottom: 1px solid #eee;
+}
+
+
+.admin-tabla tbody tr:hover {
+    background-color: #faf8f3;
+}
+
+
+.acciones-tabla {
+    display: flex;
+    gap: .4rem;
+    flex-wrap: wrap;
+}
+
+
+.btn-tabla {
+    border: none;
+    padding: .45rem .7rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: .85rem;
+}
+
+
+.btn-ver {
+    background-color: #35491e;
+    color: white;
+}
+
+
+.btn-editar {
+    background-color: #473c17;
+    color: white;
+}
+
+
+.btn-eliminar {
+    background-color: #701913;
+    color: white;
+}
