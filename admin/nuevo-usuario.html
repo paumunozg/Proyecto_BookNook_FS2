@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Nuevo usuario - BookNook</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="C:\Users\Dani\Documents\GitHub\Proyecto_BookNook_FS2\css\estilos.css">
+</head>
+
+<body>
+
+    <div class="admin-layout">
+
+        <aside class="admin-sidebar">
+
+            <div class="admin-logo">
+                BookNook
+                <span>Administración</span>
+            </div>
+
+            <nav class="admin-menu">
+
+                <a href="index.html">
+                    Inicio
+                </a>
+
+                <a href="productos.html">
+                    Productos
+                </a>
+
+                <a href="usuarios.html" class="activo">
+                    Usuarios
+                </a>
+
+                <a href="#">
+                    Órdenes
+                </a>
+
+                <a href="../index.html">
+                    Ver tienda
+                </a>
+
+            </nav>
+
+            <div class="admin-salir">
+
+                <a href="../pages/login.html">
+                    Cerrar sesión
+                </a>
+
+            </div>
+
+        </aside>
+
+        <main class="admin-contenido">
+
+            <div class="admin-header">
+
+                <p class="subtitulo">
+                    ADMINISTRACIÓN
+                </p>
+
+                <h1>Nuevo usuario</h1>
+
+                <p>
+                    Completa los datos para registrar
+                    un nuevo usuario.
+                </p>
+
+            </div>
+
+
+            <section class="formulario-admin">
+
+                <form
+                    id="formNuevoUsuario"
+                    novalidate>
+
+
+                    <div class="formulario-grid">
+
+
+
+                        <div class="campo">
+
+                            <label for="usuarioRun">
+                                RUN *
+                            </label>
+
+                            <input
+                                type="text"
+                                id="usuarioRun"
+                                maxlength="9"
+                                placeholder="19011022K"
+                                required>
+
+                            <small>
+                                Sin puntos ni guion.
+                            </small>
+
+                            <small
+                                id="errorUsuarioRun"
+                                class="mensaje-error">
+                            </small>
+
+                        </div>
+
+
+                        <div class="campo">
+
+                            <label for="usuarioNombre">
+                                Nombre *
+                            </label>
+
+                            <input
+                                type="text"
+                                id="usuarioNombre"
+                                maxlength="50"
+                                required>
+
+                            <small
+                                id="errorUsuarioNombre"
+                                class="mensaje-error">
+                            </small>
+
+                        </div>
+
+
+                        <div class="campo">
+
+                            <label for="usuarioApellidos">
+                                Apellidos *
+                            </label>
+
+                            <input
+                                type="text"
+                                id="usuarioApellidos"
+                                maxlength="100"
+                                required>
+
+                            <small
+                                id="errorUsuarioApellidos"
+                                class="mensaje-error">
+                            </small>
+
+                        </div>
+
+
+                        <div class="campo">
+
+                            <label for="usuarioCorreo">
+                                Correo *
+                            </label>
+
+                            <input
+                                type="email"
+                                id="usuarioCorreo"
+                                maxlength="100"
+                                placeholder="usuario@gmail.com"
+                                required>
+
+                            <small>
+                                Permitidos:
+                                @duoc.cl,
+                                @profesor.duoc.cl
+                                y @gmail.com.
+                            </small>
+
+                            <small
+                                id="errorUsuarioCorreo"
+                                class="mensaje-error">
+                            </small>
+
+                        </div>
+
+
+                        <div class="campo">
+
+                            <label for="usuarioNacimiento">
+                                Fecha de nacimiento
+                            </label>
+
+                            <input
+                                type="date"
+                                id="usuarioNacimiento">
+
+                        </div>
+
+
+                        <div class="campo">
+
+                            <label for="usuarioTipo">
+                                Tipo de usuario *
+                            </label>
+
+                            <select
+                                id="usuarioTipo"
+                                required>
+
+                                <option value="">
+                                    Selecciona un tipo
+                                </option>
+
+                                <option value="Administrador">
+                                    Administrador
+                                </option>
+
+                                <option value="Cliente">
+                                    Cliente
+                                </option>
+
+                                <option value="Vendedor">
+                                    Vendedor
+                                </option>
+
+                            </select>
+
+                            <small
+                                id="errorUsuarioTipo"
+                                class="mensaje-error">
+                            </small>
+
+                        </div>
+
+
+                        <div class="campo">
+
+                            <label for="usuarioRegion">
+                                Región *
+                            </label>
+
+                            <select
+                                id="usuarioRegion"
+                                required>
+
+                                <option value="">
+                                    Selecciona una región
+                                </option>
+
+                            </select>
+
+                            <small>
+                                Las regiones serán cargadas
+                                mediante JavaScript.
+                            </small>
+
+                            <small
+                                id="errorUsuarioRegion"
+                                class="mensaje-error">
+                            </small>
+
+                        </div>
+
+                        <div class="campo">
+
+                            <label for="usuarioComuna">
+                                Comuna *
+                            </label>
+
+                            <select
+                                id="usuarioComuna"
+                                required>
+
+                                <option value="">
+                                    Selecciona una comuna
+                                </option>
+
+                            </select>
+
+                            <small>
+                                Las comunas cambiarán según
+                                la región seleccionada.
+                            </small>
+
+                            <small
+                                id="errorUsuarioComuna"
+                                class="mensaje-error">
+                            </small>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="campo">
+
+                        <label for="usuarioDireccion">
+                            Dirección *
+                        </label>
+
+                        <textarea
+                            id="usuarioDireccion"
+                            maxlength="300"
+                            rows="4"
+                            required></textarea>
+
+                        <small>
+                            Máximo 300 caracteres.
+                        </small>
+
+                        <small
+                            id="errorUsuarioDireccion"
+                            class="mensaje-error">
+                        </small>
+
+                    </div>
+
+
+                    <div class="formulario-botones">
+
+                        <a
+                            href="usuarios.html"
+                            class="btn-secundario">
+                            Cancelar
+                        </a>
+
+                        <button
+                            type="submit"
+                            class="btn-principal">
+                            Guardar usuario
+                        </button>
+
+                    </div>
+
+
+                    <p
+                        id="mensajeUsuario"
+                        class="mensaje-formulario">
+                    </p>
+
+                </form>
+
+            </section>
+
+        </main>
+
+    </div>
+
+</body>
+
+</html>
