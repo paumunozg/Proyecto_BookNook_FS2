@@ -392,3 +392,167 @@ body{
     color: white;
 }
 /*disenio para nuevo producto*/
+.formulario-admin {
+    background-color: white;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 5px 20px rgba(0,0,0,.08);
+    max-width: 1000px;
+}
+
+
+.formulario-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+
+
+.campo {
+    margin-bottom: 1.3rem;
+}
+
+
+.campo label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: .4rem;
+}
+
+
+.campo input,
+.campo select,
+.campo textarea {
+    width: 100%;
+    padding: .75rem;
+    border: 1px solid #ccc;
+    border-radius: 7px;
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+
+.campo input:focus,
+.campo select:focus,
+.campo textarea:focus {
+    outline: none;
+    border-color: #7A3048;
+}
+
+
+.campo small {
+    display: block;
+    margin-top: .3rem;
+    color: #777;
+}
+
+
+.mensaje-error {
+    color: #b3261e !important;
+    font-weight: bold;
+}
+
+
+.formulario-botones {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+
+.mensaje-formulario {
+    margin-top: 1rem;
+    font-weight: bold;
+}
+
+/*detalle admin*/
+.admin-detalle {
+    background-color: white;
+    border-radius: 12px;
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 3rem;
+    box-shadow: 0 5px 20px rgba(0,0,0,.08);
+}
+
+
+.admin-detalle-imagen {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+
+.imagen-placeholder {
+    width: 250px;
+    height: 320px;
+    background-color: #F8F4EC;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 5rem;
+}
+
+
+.admin-detalle-info h2 {
+    font-size: 2rem;
+    margin: .5rem 0;
+}
+
+
+.admin-codigo {
+    color: #777;
+    margin-bottom: 1rem;
+}
+
+
+.admin-datos-producto {
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+
+.admin-datos-producto div {
+    background-color: #F8F4EC;
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+
+.admin-datos-producto strong,
+.admin-datos-producto span {
+    display: block;
+}
+
+
+.admin-datos-producto strong {
+    margin-bottom: .3rem;
+}
+
+
+.estado-disponible {
+    color: #39723a;
+    font-weight: bold;
+}
+
+
+@media (max-width: 700px) {
+
+    .formulario-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .admin-detalle {
+        grid-template-columns: 1fr;
+    }
+
+    .admin-datos-producto {
+        grid-template-columns: 1fr;
+    }
+
+}
