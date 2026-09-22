@@ -128,7 +128,7 @@ function agregarAlCarrito(id, cantidad = 1) {
 
     actualizarContadorCarrito();
 
-    alert("¡" + producto.nombre + " fue agregado al carrito! 📚");
+    alert("¡" + producto.nombre + " fue agregado al carrito!");
 }
 
 // 4. BOTONES "AÑADIR AL CARRITO"
@@ -426,7 +426,7 @@ if (formularioRegistro) {
         );
 
 
-        alert("¡Cuenta creada correctamente! 📚");
+        alert("¡Cuenta creada correctamente!");
 
 
         formularioRegistro.reset();
@@ -659,7 +659,7 @@ if (formularioContacto) {
 
 
         document.getElementById("mensajeContacto").textContent =
-            "¡Mensaje enviado correctamente! Nos pondremos en contacto contigo pronto. 📚";
+            "¡Mensaje enviado correctamente! Nos pondremos en contacto contigo pronto.";
 
 
         formularioContacto.reset();
@@ -728,4 +728,527 @@ configurarBotonesCarrito();
 
 configurarFiltros();
 
+//FUNCIONES PANEL DE ADMIN
 
+let productosAdmin =
+    JSON.parse(localStorage.getItem("booknookProductos")) || [];
+
+// Guardar productos
+function guardarProductosAdmin() {
+    localStorage.setItem(
+        "booknookProductos",
+        JSON.stringify(productosAdmin)
+    );
+}
+
+// Buscar producto por código
+function buscarProductoAdmin(codigo) {
+    return productosAdmin.find(function(producto) {
+        return producto.codigo === codigo;
+    });
+}
+
+// Validar producto
+function validarProductoAdmin(producto) {
+
+    if (producto.codigo.trim() === "") {
+        return "El código es obligatorio.";
+    }
+
+    if (producto.codigo.trim().length < 3) {
+        return "El código debe tener al menos 3 caracteres.";
+    }
+
+    if (producto.nombre.trim() === "") {
+        return "El nombre es obligatorio.";
+    }
+
+    if (producto.nombre.trim().length > 100) {
+        return "El nombre no puede superar los 100 caracteres.";
+    }
+
+    if (producto.descripcion.trim().length > 500) {
+        return "La descripción no puede superar los 500 caracteres.";
+    }
+
+    if (producto.precio === "" || Number(producto.precio) < 0) {
+        return "El precio debe ser mayor o igual a 0.";
+    }
+
+    if (
+        producto.stock === "" ||
+        Number(producto.stock) < 0 ||
+        !Number.isInteger(Number(producto.stock))
+    ) {
+        return "El stock debe ser un número entero mayor o igual a 0.";
+    }
+
+    if (
+        producto.stockCritico !== "" &&
+        (
+            Number(producto.stockCritico) < 0 ||
+            !Number.isInteger(Number(producto.stockCritico))
+        )
+    ) {
+        return "El stock crítico debe ser un número entero mayor o igual a 0.";
+    }
+
+    if (producto.categoria === "") {
+        return "Debe seleccionar una categoría.";
+    }
+
+    return null;
+}
+
+//crear producto
+const formularioNuevoProducto =
+    document.getElementById("formNuevoProducto");
+
+if (formularioNuevoProducto) {
+
+    formularioNuevoProducto.addEventListener("submit", function(event) {
+
+        event.preventDefault();
+
+        const producto = {
+
+            codigo: document
+                .getElementById("codigoProducto")
+                .value.trim(),
+
+            nombre: document
+                .getElementById("nombreProducto")
+                .value.trim(),
+
+            precio: document
+                .getElementById("precioProducto")
+                .value,
+
+            stock: document
+                .getElementById("stockProducto")
+                .value,
+
+            stockCritico: document
+                .getElementById("stockCritico")
+                .value,
+
+            categoria: document
+                .getElementById("categoriaProducto")
+                .value,
+
+            descripcion: document
+                .getElementById("descripcionProducto")
+                .value.trim(),
+
+            imagen: document
+                .getElementById("imagenProducto")
+                .value
+
+        };
+
+
+        const error = validarProductoAdmin(producto);
+
+        if (error) {
+            alert(error);
+            return;
+        }
+
+
+        if (buscarProductoAdmin(producto.codigo)) {
+            alert("Ya existe un producto con ese código.");
+            return;
+        }
+
+
+        productosAdmin.push(producto);
+
+        guardarProductosAdmin();
+
+        alert("Producto agregado correctamente.");
+
+        window.location.href = "productos.html";
+
+    });
+}
+
+//listar producto
+const tablaProductos =
+    document.querySelector(".admin-tabla tbody");
+
+if (tablaProductos) {
+
+    // Si todavía no existen productos,
+    // dejamos los productos de ejemplo que ya tiene el HTML.
+    if (productosAdmin.length === 0) {
+
+        productosAdmin = [
+            {
+                codigo: "BK001",
+                nombre: "El Hobbit",
+                categoria: "fantasia",
+                precio: 12990,
+                stock: 15,
+                stockCritico: 5,
+                descripcion:
+                    "Una aventura clásica de fantasía para los amantes de la literatura fantástica.",
+                imagen: ""
+            },
+            {
+                codigo: "BK002",
+                nombre: "Coraline",
+                categoria: "fantasia",
+                precio: 10990,
+                stock: 8,
+                stockCritico: 3,
+                descripcion: "",
+                imagen: ""
+            },
+            {
+                codigo: "BK003",
+                nombre: "Jujutsu Kaisen #1",
+                categoria: "mangas",
+                precio: 8990,
+                stock: 4,
+                stockCritico: 2,
+                descripcion: "",
+                imagen: ""
+            }
+        ];
+
+        guardarProductosAdmin();
+    }
+
+
+    tablaProductos.innerHTML = "";
+
+
+    productosAdmin.forEach(function(producto) {
+
+        const fila = document.createElement("tr");
+
+        fila.innerHTML = `
+            <td>${producto.codigo}</td>
+
+            <td>
+                <strong>${producto.nombre}</strong>
+            </td>
+
+            <td>${producto.categoria}</td>
+
+            <td>$${Number(producto.precio).toLocaleString("es-CL")}</td>
+
+            <td>${producto.stock}</td>
+
+            <td class="acciones-tabla">
+
+                <a
+                    href="detalle-producto.html?codigo=${producto.codigo}"
+                    class="btn-tabla btn-ver">
+                    Ver
+                </a>
+
+                <a
+                    href="editar-producto.html?codigo=${producto.codigo}"
+                    class="btn-tabla btn-editar">
+                    Editar
+                </a>
+
+                <button
+                    type="button"
+                    class="btn-tabla btn-eliminar"
+                    onclick="eliminarProductoAdmin('${producto.codigo}')">
+                    Eliminar
+                </button>
+
+            </td>
+        `;
+
+        tablaProductos.appendChild(fila);
+
+    });
+
+}
+
+//eliminar producto
+function eliminarProductoAdmin(codigo) {
+
+    const confirmar = confirm(
+        "¿Estás seguro de eliminar este producto?"
+    );
+
+    if (!confirmar) {
+        return;
+    }
+
+
+    productosAdmin = productosAdmin.filter(function(producto) {
+        return producto.codigo !== codigo;
+    });
+
+
+    guardarProductosAdmin();
+
+    alert("Producto eliminado correctamente.");
+
+    window.location.reload();
+
+}
+
+//editar producto
+const formularioEditarProducto =
+    document.getElementById("formEditarProducto");
+
+if (formularioEditarProducto) {
+
+    const parametros =
+        new URLSearchParams(window.location.search);
+
+    const codigoOriginal =
+        parametros.get("codigo");
+
+
+    let producto = buscarProductoAdmin(codigoOriginal);
+
+
+    if (!producto) {
+        producto = buscarProductoAdmin("BK001");
+    }
+
+
+    if (producto) {
+
+        document.getElementById("editarCodigo").value =
+            producto.codigo;
+
+        document.getElementById("editarNombre").value =
+            producto.nombre;
+
+        document.getElementById("editarPrecio").value =
+            producto.precio;
+
+        document.getElementById("editarStock").value =
+            producto.stock;
+
+        document.getElementById("editarStockCritico").value =
+            producto.stockCritico;
+
+        document.getElementById("editarCategoria").value =
+            producto.categoria;
+
+        document.getElementById("editarDescripcion").value =
+            producto.descripcion;
+    }
+
+
+    formularioEditarProducto.addEventListener(
+        "submit",
+        function(event) {
+
+            event.preventDefault();
+
+
+            const codigo =
+                document.getElementById("editarCodigo").value.trim();
+
+
+            const nuevosDatos = {
+
+                codigo: codigo,
+
+                nombre:
+                    document.getElementById("editarNombre")
+                    .value.trim(),
+
+                precio:
+                    document.getElementById("editarPrecio")
+                    .value,
+
+                stock:
+                    document.getElementById("editarStock")
+                    .value,
+
+                stockCritico:
+                    document.getElementById("editarStockCritico")
+                    .value,
+
+                categoria:
+                    document.getElementById("editarCategoria")
+                    .value,
+
+                descripcion:
+                    document.getElementById("editarDescripcion")
+                    .value.trim(),
+
+                imagen:
+                    document.getElementById("editarImagen")
+                    .value
+
+            };
+
+
+            const error =
+                validarProductoAdmin(nuevosDatos);
+
+
+            if (error) {
+                alert(error);
+                return;
+            }
+
+
+            const productoEditar =
+                buscarProductoAdmin(codigoOriginal);
+
+
+            if (!productoEditar) {
+                alert("Producto no encontrado.");
+                return;
+            }
+
+
+            productoEditar.codigo = codigo;
+            productoEditar.nombre = nuevosDatos.nombre;
+            productoEditar.precio = nuevosDatos.precio;
+            productoEditar.stock = nuevosDatos.stock;
+            productoEditar.stockCritico = nuevosDatos.stockCritico;
+            productoEditar.categoria = nuevosDatos.categoria;
+            productoEditar.descripcion = nuevosDatos.descripcion;
+
+
+            guardarProductosAdmin();
+
+
+            alert("Producto actualizado correctamente.");
+
+            window.location.href = "productos.html";
+
+        }
+    );
+
+}
+
+//detalle producto
+if (
+    window.location.pathname.includes("detalle-producto.html")
+) {
+
+    const parametros =
+        new URLSearchParams(window.location.search);
+
+    const codigo =
+        parametros.get("codigo");
+
+
+    const producto =
+        buscarProductoAdmin(codigo || "BK001");
+
+
+    if (producto) {
+
+        const detalle =
+            document.querySelector(".admin-detalle-info");
+
+        if (detalle) {
+
+            const categoriaNombre = {
+
+                mangas: "Mangas & Cómics",
+
+                fantasia: "Fantástica & Sci-Fi",
+
+                novelas: "Novelas",
+
+                merch: "Marcadores & Merch"
+
+            };
+
+
+            detalle.querySelector(".categoria").textContent =
+                categoriaNombre[producto.categoria] ||
+                producto.categoria;
+
+
+            detalle.querySelector("h2").textContent =
+                producto.nombre;
+
+
+            detalle.querySelector(".admin-codigo").textContent =
+                "Código: " + producto.codigo;
+
+
+            const parrafos =
+                detalle.querySelectorAll("p");
+
+
+            // Descripción
+            if (parrafos.length > 1) {
+                parrafos[1].textContent =
+                    producto.descripcion;
+            }
+
+
+            detalle.querySelector(".precio").textContent =
+                "$" +
+                Number(producto.precio)
+                .toLocaleString("es-CL");
+
+
+            const datos =
+                detalle.querySelectorAll(
+                    ".admin-datos-producto span"
+                );
+
+
+            if (datos.length >= 3) {
+
+                datos[0].textContent =
+                    producto.stock + " unidades";
+
+                datos[1].textContent =
+                    producto.stockCritico === ""
+                        ? "No definido"
+                        : producto.stockCritico + " unidades";
+
+
+                if (
+                    producto.stockCritico !== "" &&
+                    Number(producto.stock) <=
+                    Number(producto.stockCritico)
+                ) {
+
+                    datos[2].textContent =
+                        "Stock crítico";
+
+                } else if (Number(producto.stock) === 0) {
+
+                    datos[2].textContent =
+                        "Sin stock";
+
+                } else {
+
+                    datos[2].textContent =
+                        "Disponible";
+                }
+            }
+
+
+            const botonEditar =
+                detalle.querySelector(
+                    'a[href="editar-producto.html"]'
+                );
+
+
+            if (botonEditar) {
+
+                botonEditar.href =
+                    "editar-producto.html?codigo=" +
+                    producto.codigo;
+
+            }
+
+        }
+
+    }
+
+}
