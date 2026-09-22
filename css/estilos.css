@@ -828,7 +828,7 @@ header {
 .blog-card a {
     display: inline-block;
     margin-top: 1rem;
-    color: #444444;
+    color: white;
     font-weight: bold;
 }
 
@@ -1092,3 +1092,162 @@ footer {
         width: 100%;
     }
 }
+
+/* =========================
+   FORMULARIO LOGIN
+========================= */
+
+.formulario {
+    max-width: 500px;
+    margin: 2rem auto 0;
+
+    background-color: white;
+
+    padding: 2rem;
+
+    border-radius: 12px;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+
+/* =========================
+   CAMPOS DEL FORMULARIO
+========================= */
+
+.campo {
+    display: flex;
+    flex-direction: column;
+
+    margin-bottom: 1.5rem;
+}
+
+.campo label {
+    margin-bottom: 0.5rem;
+
+    font-weight: bold;
+
+    color: #444444;
+}
+
+.campo input {
+    width: 100%;
+
+    padding: 0.8rem 1rem;
+
+    border: 1px solid #D8CEC1;
+    border-radius: 8px;
+
+    background-color: #F8F4EC;
+
+    color: #555555;
+
+    font-family: Arial, sans-serif;
+
+    transition: 0.3s;
+}
+
+
+/* =========================
+   CAMPOS ENFOCADOS
+========================= */
+
+.campo input:focus {
+    outline: none;
+
+    border-color: #444444;
+
+    box-shadow: 0 0 0 3px rgba(198, 156, 109, 0.2);
+}
+
+.campo input::placeholder {
+    color: #999;
+}
+
+
+/* =========================
+   MENSAJES DE ERROR
+========================= */
+
+.mensaje-error {
+    min-height: 20px;
+
+    margin-top: 0.4rem;
+
+    color: #444444;
+
+    font-size: 0.85rem;
+}
+
+
+/* =========================
+   BOTÓN LOGIN
+========================= */
+
+.formulario .btn-principal {
+    width: 100%;
+
+    border: none;
+    border-radius: 8px;
+
+    padding: 0.8rem 1.4rem;
+
+    background-color: #444444;
+
+    color: white;
+
+    font-weight: bold;
+    font-size: 1rem;
+
+    font-family: Arial, sans-serif;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.formulario .btn-principal:hover {
+    background-color: #444444;
+}
+
+
+/* =========================
+   TEXTO REGISTRO
+========================= */
+
+.texto-formulario {
+    margin-top: 1.5rem;
+
+    text-align: center;
+
+    color: #777;
+}
+
+.texto-formulario a {
+    color: #444444;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+.texto-formulario a:hover {
+    color: #444444;
+}
+
+
+/* =========================
+   LOGIN RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+
+    .formulario {
+        margin-left: 1rem;
+        margin-right: 1rem;
+
+        padding: 1.5rem;
+    }
+
+}
+
