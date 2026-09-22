@@ -556,3 +556,539 @@ body{
     }
 
 }
+
+/* =========================
+   CONFIGURACIÓN GENERAL
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #F8F4EC;
+    color: #3a3a3a;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+header {
+    background-color: #3f3f3f;
+    color: white;
+}
+
+.navbar {
+    max-width: 1200px;
+    margin: auto;
+    padding: 1rem 2rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.logo a {
+    font-size: 1.6rem;
+    font-weight: bold;
+}
+
+.menu {
+    list-style: none;
+
+    display: flex;
+    gap: 1.5rem;
+}
+
+.menu a {
+    color: white;
+    transition: 0.3s;
+}
+
+.menu a:hover {
+    color: #444444;
+}
+
+.acciones {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+#btnCarrito {
+    border: none;
+    background-color: #6d6d6d;
+    color: #0c0c0c;
+
+    padding: 0.6rem 1rem;
+    border-radius: 8px;
+
+    cursor: pointer;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    max-width: 1200px;
+    margin: auto;
+    padding: 4rem 2rem;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 3rem;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+}
+
+.subtitulo {
+    color: #4e4e4e;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 0.5rem;
+}
+
+.hero-contenido > p:not(.subtitulo) {
+    margin-bottom: 1.5rem;
+}
+
+.hero-imagen img {
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+
+/* =========================
+   BOTONES
+========================= */
+
+.btn-principal,
+.btn-secundario {
+    display: inline-block;
+    padding: 0.8rem 1.4rem;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+.btn-principal {
+    background-color: #444444;
+    color: white;
+}
+
+.btn-principal:hover {
+    background-color: #444444;
+}
+
+.btn-secundario {
+    background-color: #444444;
+    color: white;
+}
+
+
+/* =========================
+   SECCIONES
+========================= */
+
+.seccion {
+    max-width: 1200px;
+    margin: auto;
+    padding: 4rem 2rem;
+}
+
+.titulo-seccion {
+    margin-bottom: 2rem;
+}
+
+
+/* =========================
+   PRODUCTOS
+========================= */
+
+.productos-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(220px, 1fr));
+
+    gap: 1.5rem;
+}
+
+.producto-card {
+    background-color: white;
+    border-radius: 12px;
+    overflow: hidden;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+
+    transition: transform 0.3s;
+}
+
+.producto-card:hover {
+    transform: translateY(-5px);
+}
+
+.producto-card img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+}
+
+.producto-info {
+    padding: 1.2rem;
+}
+
+.producto-info h3 {
+    margin-bottom: 0.4rem;
+}
+
+.categoria {
+    font-size: 0.9rem;
+    color: #777;
+}
+
+.precio {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #3f3f3f;
+
+    margin: 0.8rem 0;
+}
+
+.btn-carrito {
+    width: 100%;
+
+    border: none;
+    border-radius: 6px;
+
+    padding: 0.7rem;
+
+    background-color: #444444;
+    color: white;
+
+    cursor: pointer;
+}
+
+
+/* =========================
+   BLOG
+========================= */
+
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+.blog-card {
+    background-color: white;
+    padding-bottom: 1.5rem;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.blog-card h3,
+.blog-card p,
+.blog-card a {
+    margin-left: 1.2rem;
+    margin-right: 1.2rem;
+}
+
+.blog-card h3 {
+    margin-top: 1rem;
+}
+
+.blog-card p {
+    margin-top: 0.5rem;
+}
+
+.blog-card a {
+    display: inline-block;
+    margin-top: 1rem;
+    color: #444444;
+    font-weight: bold;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    background-color: #444444;
+    color: white;
+    margin-top: 3rem;
+}
+
+.footer-contenido {
+    max-width: 1200px;
+    margin: auto;
+    padding: 3rem 2rem;
+
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 3rem;
+}
+
+.footer-contenido a {
+    display: block;
+    margin-top: 0.4rem;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding: 1rem;
+    border-top: 1px solid rgba(255,255,255,0.2);
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+
+    .navbar {
+        flex-direction: column;
+    }
+
+    .menu {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+
+    .blog-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-contenido {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* =========================
+   CATEGORÍAS DE PRODUCTOS
+========================= */
+
+.categorias {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+
+    margin-bottom: 2.5rem;
+}
+
+.categorias button {
+    border: 2px solid #444444;
+    background-color: transparent;
+    color: #707070;
+
+    padding: 0.7rem 1.2rem;
+    border-radius: 8px;
+
+    font-weight: bold;
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.categorias button:hover {
+    background-color: #444444;
+    color: #505050;
+}
+
+.categorias button:first-child {
+    background-color: #444444;
+    border-color: #444444;
+    color: white;
+}
+
+
+/* =========================
+   PRODUCTOS
+========================= */
+
+.productos-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(220px, 1fr));
+
+    gap: 1.5rem;
+}
+
+.producto-card {
+    background-color: white;
+    border-radius: 12px;
+    overflow: hidden;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+
+    transition:
+        transform 0.3s,
+        box-shadow 0.3s;
+}
+
+.producto-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+.producto-card img {
+    width: 100%;
+    height: 280px;
+
+    object-fit: cover;
+
+    transition: transform 0.3s;
+}
+
+.producto-card:hover img {
+    transform: scale(1.03);
+}
+
+.producto-info {
+    padding: 1.2rem;
+}
+
+.producto-info h2 {
+    font-size: 1.2rem;
+    line-height: 1.3;
+
+    margin-bottom: 0.4rem;
+
+    color: #444444;
+}
+
+.categoria {
+    font-size: 0.9rem;
+    color: #777;
+
+    margin-bottom: 0.5rem;
+}
+
+.precio {
+    font-size: 1.2rem;
+    font-weight: bold;
+
+    color: #444444;
+
+    margin: 0.8rem 0;
+}
+
+.btn-carrito {
+    width: 100%;
+
+    border: none;
+    border-radius: 6px;
+
+    padding: 0.7rem;
+
+    background-color: #444444;
+    color: white;
+
+    cursor: pointer;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+.btn-carrito:hover {
+    background-color: #444444   ;
+}
+
+
+/* =========================
+   PÁGINA PRODUCTOS
+========================= */
+
+.titulo-seccion h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.8rem;
+}
+
+.titulo-seccion > p:last-child {
+    max-width: 750px;
+    color: #6b625c;
+}
+
+
+/* =========================
+   RESPONSIVE PRODUCTOS
+========================= */
+
+@media (max-width: 768px) {
+
+    .categorias {
+        justify-content: center;
+    }
+
+    .categorias button {
+        flex: 1 1 auto;
+    }
+
+    .titulo-seccion {
+        text-align: center;
+    }
+
+    .titulo-seccion h1 {
+        font-size: 2rem;
+    }
+
+    .productos-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+}
+
+
+@media (max-width: 500px) {
+
+    .productos-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .categorias {
+        flex-direction: column;
+    }
+
+    .categorias button {
+        width: 100%;
+    }
+}
